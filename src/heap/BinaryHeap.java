@@ -6,16 +6,17 @@ import java.util.Comparator;
  * @author Manoj Khanna
  */
 
-@SuppressWarnings("unused")
 public class BinaryHeap<E> {
 
-    public int c, n;
-    public Comparator<? super E> comparator;
+    public final int c;
+    public final Comparator<E> comparator;
+
     public Node<E>[] nodes;
     public int[] p, q;
+    public int n;
 
     @SuppressWarnings("unchecked")
-    public BinaryHeap(int c, Comparator<? super E> comparator) {
+    public BinaryHeap(int c, Comparator<E> comparator) {
         this.c = c;
         this.comparator = comparator;
 
@@ -206,7 +207,7 @@ public class BinaryHeap<E> {
 
     public static class Node<E> {
 
-        public int i;
+        public final int i;
         public E e;
 
         public Node(int i, E e) {
@@ -227,7 +228,44 @@ public class BinaryHeap<E> {
             System.out.println("Binary Heap Example:");
             System.out.println("");
 
-            //TODO
+            BinaryHeap<Integer> binaryHeap = new BinaryHeap<>(10);
+
+            binaryHeap.add(0, 60);
+            binaryHeap.add(1, 40);
+            binaryHeap.add(2, 50);
+            binaryHeap.add(3, 30);
+            binaryHeap.add(4, 10);
+            binaryHeap.add(5, 20);
+
+            System.out.println("add(...):\n" + binaryHeap);
+            System.out.println("");
+
+            binaryHeap.remove(3);
+
+            System.out.println("remove(3):\n" + binaryHeap);
+            System.out.println("");
+
+            System.out.println("peek(): " + binaryHeap.peek());
+            System.out.println("");
+
+            System.out.println("poll(): " + binaryHeap.poll() + "\n" + binaryHeap);
+            System.out.println("");
+
+            System.out.println("contains(1): " + binaryHeap.contains(1));
+            System.out.println("");
+
+            System.out.println("size(): " + binaryHeap.size());
+            System.out.println("");
+
+            System.out.println("isEmpty(): " + binaryHeap.isEmpty());
+            System.out.println("");
+
+            System.out.println("get(1): " + binaryHeap.get(1));
+            System.out.println("");
+
+            binaryHeap.set(0, 10);
+
+            System.out.println("set(0, 10):\n" + binaryHeap);
         }
 
     }

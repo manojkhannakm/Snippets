@@ -6,7 +6,6 @@ import java.util.Objects;
  * @author Manoj Khanna
  */
 
-@SuppressWarnings("unused")
 public class Pair<A, B> implements Comparable<Pair<A, B>> {
 
     public A a;
@@ -71,8 +70,14 @@ public class Pair<A, B> implements Comparable<Pair<A, B>> {
             Pair<Integer, Integer> pair1 = new Pair<>(10, 20), pair2 = new Pair<>(10, 20);
 
             System.out.println("(10, 20) == (10, 20): " + (pair1 == pair2));
+            System.out.println("");
+
             System.out.println("(10, 20).hashCode() == (10, 20).hashCode(): " + (pair1.hashCode() == pair2.hashCode()));
+            System.out.println("");
+
             System.out.println("(10, 20).equals((10, 20)): " + pair1.equals(pair2));
+            System.out.println("");
+
             System.out.println("(10, 20).compareTo((10, 20)): " + pair1.compareTo(pair2));
         }
 

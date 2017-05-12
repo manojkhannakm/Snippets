@@ -6,10 +6,9 @@ import java.util.HashMap;
  * @author Manoj Khanna
  */
 
-@SuppressWarnings("unused")
 public class Graph<E, W> {
 
-    public HashMap<Integer, Vertex<E, W>> vertexMap;
+    public final HashMap<Integer, Vertex<E, W>> vertexMap;
 
     public Graph() {
         vertexMap = new HashMap<>();
@@ -114,9 +113,10 @@ public class Graph<E, W> {
 
     public static class Vertex<E, W> {
 
-        public int u;
+        public final HashMap<Integer, Edge<W>> edgeMap;
+
+        public final int u;
         public E e;
-        public HashMap<Integer, Edge<W>> edgeMap;
 
         public Vertex(int u, E e) {
             this.u = u;
@@ -144,7 +144,7 @@ public class Graph<E, W> {
 
     public static class Edge<W> {
 
-        public int v;
+        public final int v;
         public W w;
 
         public Edge(int v, W w) {
@@ -194,19 +194,28 @@ public class Graph<E, W> {
             System.out.println("");
 
             System.out.println("contains(1): " + graph.contains(1));
+            System.out.println("");
+
             System.out.println("size(): " + graph.size());
+            System.out.println("");
+
             System.out.println("isEmpty(): " + graph.isEmpty());
+            System.out.println("");
+
             System.out.println("get(3): " + graph.get(3));
+            System.out.println("");
 
             graph.set(3, 'M');
 
-            System.out.println("set(3, M): " + graph.get(3));
+            System.out.println("set(3, M):\n" + graph);
+            System.out.println("");
 
             System.out.println("getWeight(0, 3): " + graph.getWeight(0, 3));
+            System.out.println("");
 
             graph.setWeight(0, 3, 80);
 
-            System.out.println("setWeight(0, 3, 80): " + graph.getWeight(0, 3));
+            System.out.println("setWeight(0, 3, 80):\n" + graph);
         }
 
     }

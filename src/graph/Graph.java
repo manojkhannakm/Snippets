@@ -59,20 +59,8 @@ public class Graph<E, W> {
         }
     }
 
-    public void clear() {
-        vertexMap.clear();
-    }
-
     public boolean contains(int u) {
         return vertexMap.containsKey(u);
-    }
-
-    public int size() {
-        return vertexMap.size();
-    }
-
-    public boolean isEmpty() {
-        return vertexMap.isEmpty();
     }
 
     public E get(int u) {
@@ -168,7 +156,7 @@ public class Graph<E, W> {
             Graph<Character, Integer> graph = new Graph<>();
 
             for (int i = 0; i < 5; i++) {
-                graph.addVertex(i, (char) ('A' + i));
+                graph.addVertex(i, (char) ('a' + i));
             }
 
             System.out.println("addVertex(...):\n" + graph);
@@ -193,21 +181,15 @@ public class Graph<E, W> {
             System.out.println("removeEdge(2, 2):\n" + graph);
             System.out.println("");
 
-            System.out.println("contains(1): " + graph.contains(1));
-            System.out.println("");
-
-            System.out.println("size(): " + graph.size());
-            System.out.println("");
-
-            System.out.println("isEmpty(): " + graph.isEmpty());
+            System.out.println("contains(2): " + graph.contains(2));
             System.out.println("");
 
             System.out.println("get(3): " + graph.get(3));
             System.out.println("");
 
-            graph.set(3, 'M');
+            graph.set(3, 'm');
 
-            System.out.println("set(3, M):\n" + graph);
+            System.out.println("set(3, m):\n" + graph);
             System.out.println("");
 
             System.out.println("getWeight(0, 3): " + graph.getWeight(0, 3));

@@ -32,7 +32,7 @@ public class BinaryHeap<E> {
 
     @Override
     public String toString() {
-        return toString(0);
+        return toString(0, 0);
     }
 
     private int parentIndex(int i) {
@@ -47,14 +47,12 @@ public class BinaryHeap<E> {
         return 2 * i + 2;
     }
 
-    public String toString(int i) {
+    public String toString(int i, int d) {
         if (i >= n) {
             return "";
         }
 
         StringBuilder string = new StringBuilder();
-
-        int d = (int) Math.floor(Math.log(i + 1) / Math.log(2));
 
         if (d > 0) {
             string.append("\n");
@@ -65,8 +63,8 @@ public class BinaryHeap<E> {
         }
 
         string.append(nodes[q[i]])
-                .append(toString(leftIndex(i)))
-                .append(toString(rightIndex(i)));
+                .append(toString(leftIndex(i), d + 1))
+                .append(toString(rightIndex(i), d + 1));
 
         return string.toString();
     }
@@ -163,24 +161,8 @@ public class BinaryHeap<E> {
         return null;
     }
 
-    public void clear() {
-        for (int i = 0; i < c; i++) {
-            nodes[i] = null;
-        }
-
-        n = 0;
-    }
-
     public boolean contains(int i) {
         return nodes[i] != null;
-    }
-
-    public int size() {
-        return n;
-    }
-
-    public boolean isEmpty() {
-        return n == 0;
     }
 
     public E get(int i) {
@@ -252,12 +234,6 @@ public class BinaryHeap<E> {
             System.out.println("");
 
             System.out.println("contains(1): " + binaryHeap.contains(1));
-            System.out.println("");
-
-            System.out.println("size(): " + binaryHeap.size());
-            System.out.println("");
-
-            System.out.println("isEmpty(): " + binaryHeap.isEmpty());
             System.out.println("");
 
             System.out.println("get(1): " + binaryHeap.get(1));

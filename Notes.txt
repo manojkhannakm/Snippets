@@ -1,5 +1,4 @@
 * Avoid protected and private
-* Avoid final
 * Avoid getters and setters
 * Initialize all class variables in the constructor
 * Use index and element in Nested classes(e.g.: Node)

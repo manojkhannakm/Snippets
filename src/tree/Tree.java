@@ -1,6 +1,6 @@
 package tree;
 
-import java.util.TreeMap;
+import java.util.HashMap;
 
 /**
  * @author Manoj Khanna
@@ -47,7 +47,7 @@ public class Tree<E> {
 
         public final int i;
         public final Node<E> parentNode;
-        public final TreeMap<Integer, Node<E>> childNodeMap;
+        public final HashMap<Integer, Node<E>> childNodeMap;
 
         public E e;
 
@@ -56,7 +56,7 @@ public class Tree<E> {
             this.e = e;
             this.parentNode = parentNode;
 
-            childNodeMap = new TreeMap<>();
+            childNodeMap = new HashMap<>();
         }
 
         @Override

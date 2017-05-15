@@ -10,9 +10,9 @@ public class BinaryHeap<E> {
 
     public final int c;
     public final Comparator<E> comparator;
+    public final Node<E>[] nodes;
+    public final int[] p, q;
 
-    public Node<E>[] nodes;
-    public int[] p, q;
     public int n;
 
     @SuppressWarnings("unchecked")
@@ -190,6 +190,7 @@ public class BinaryHeap<E> {
     public static class Node<E> {
 
         public final int i;
+
         public E e;
 
         public Node(int i, E e) {

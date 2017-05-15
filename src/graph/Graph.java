@@ -14,10 +14,6 @@ public class Graph<E, W> {
         vertexMap = new HashMap<>();
     }
 
-    public Graph(int c) {
-        vertexMap = new HashMap<>(c);
-    }
-
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder();
@@ -101,9 +97,9 @@ public class Graph<E, W> {
 
     public static class Vertex<E, W> {
 
+        public final int u;
         public final HashMap<Integer, Edge<W>> edgeMap;
 
-        public final int u;
         public E e;
 
         public Vertex(int u, E e) {
@@ -133,6 +129,7 @@ public class Graph<E, W> {
     public static class Edge<W> {
 
         public final int v;
+
         public W w;
 
         public Edge(int v, W w) {
